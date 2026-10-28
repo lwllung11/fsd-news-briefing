@@ -18,6 +18,9 @@
     "其他",
   ];
 
+  var ALLOWED_ALERTS = ["劏房", "醫院"];
+  var FILTER_ALERTS = "重點提醒";
+
   var elStatus = document.getElementById("status");
   var elList = document.getElementById("news-list");
   var elFilter = document.getElementById("filter-bar");
@@ -121,6 +124,46 @@
     );
   }
 
+  function normalizeAlerts(raw) {
+    if (!Array.isArray(raw)) return [];
+    var out = [];
+    var seen = {};
+    raw.forEach(function (label) {
+      if (ALLOWED_ALERTS.indexOf(label) !== -1 && !seen[label]) {
+        seen[label] = true;
+        out.push(label);
+      }
+    });
+    return out;
+  }
+
+  function alertBannerHtml(alerts) {
+    if (!alerts.length) return "";
+    var chips = alerts
+      .map(function (a) {
+        return (
+          '<span class="alert-chip alert-chip--' +
+          (a === "劏房" ? "subdivided" : a === "醫院" ? "hospital" : "generic") +
+          '">' +
+          escapeHtml(a) +
+          "</span>"
+        );
+      })
+      .join("");
+    return (
+      '<div class="news-card__alert" role="status">' +
+      '<span class="news-card__alert-icon" aria-hidden="true">' +
+      '<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false">' +
+      '<path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 3.8 21 19.5H3L12 3.8z"/>' +
+      '<path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 10v4.2M12 16.8v.2"/>' +
+      "</svg></span>" +
+      '<span class="news-card__alert-text"><strong>重點提醒</strong>：</span>' +
+      '<span class="news-card__alert-chips">' +
+      chips +
+      "</span></div>"
+    );
+  }
+
 
   function showError(message) {
     elStatus.hidden = false;
@@ -173,8 +216,10 @@
   function renderItem(item) {
     var li = document.createElement("li");
     var cat = normalizeCategory(item.category);
-    li.className = "news-card";
+    var alerts = normalizeAlerts(item.alerts);
+    li.className = "news-card" + (alerts.length ? " news-card--alert" : "");
     li.setAttribute("data-category", cat);
+    li.setAttribute("data-has-alert", alerts.length ? "true" : "false");
     if (item.id) li.id = "item-" + item.id;
 
     var metaParts = [];
@@ -190,6 +235,7 @@
     }
 
     li.innerHTML =
+      alertBannerHtml(alerts) +
       '<div class="news-card__meta">' +
       metaParts.join("") +
       "</div>" +
@@ -208,9 +254,15 @@
     var days = Array.isArray(data.days) ? data.days.slice() : [];
     days = days
       .map(function (day) {
+        var items = day && Array.isArray(day.items) ? day.items.slice() : [];
+        items.sort(function (a, b) {
+          var aAlert = normalizeAlerts(a && a.alerts).length > 0 ? 0 : 1;
+          var bAlert = normalizeAlerts(b && b.alerts).length > 0 ? 0 : 1;
+          return aAlert - bAlert;
+        });
         return {
           briefingDate: day && day.briefingDate,
-          items: day && Array.isArray(day.items) ? day.items : [],
+          items: items,
         };
       })
       .filter(function (day) {
@@ -243,14 +295,26 @@
     });
   }
 
-  function renderFilterBar(cats) {
+  function hasAnyAlerts(days) {
+    for (var i = 0; i < days.length; i++) {
+      var items = days[i].items || [];
+      for (var j = 0; j < items.length; j++) {
+        if (normalizeAlerts(items[j].alerts).length) return true;
+      }
+    }
+    return false;
+  }
+
+  function renderFilterBar(cats, showAlertFilter) {
     elFilter.innerHTML = "";
-    if (!cats.length) {
+    if (!cats.length && !showAlertFilter) {
       elFilter.hidden = true;
       return;
     }
 
-    var labels = ["全部"].concat(cats);
+    var labels = ["全部"];
+    if (showAlertFilter) labels.push(FILTER_ALERTS);
+    labels = labels.concat(cats);
     labels.forEach(function (label) {
       var btn = document.createElement("button");
       btn.type = "button";
@@ -260,6 +324,11 @@
         btn.innerHTML =
           '<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>' +
           '<span class="filter-chip__text">全部</span>';
+      } else if (label === FILTER_ALERTS) {
+        btn.className = "filter-chip filter-chip--alert";
+        btn.innerHTML =
+          '<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 3.8 21 19.5H3L12 3.8z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 10v4.2M12 16.8v.2"/></svg>' +
+          '<span class="filter-chip__text">重點提醒</span>';
       } else {
         btn.innerHTML =
           categoryIcon(label) +
@@ -296,7 +365,11 @@
           section.querySelectorAll(".news-card"),
           function (li) {
             var cat = li.getAttribute("data-category");
-            var show = activeFilter === "全部" || cat === activeFilter;
+            var hasAlert = li.getAttribute("data-has-alert") === "true";
+            var show =
+              activeFilter === "全部" ||
+              (activeFilter === FILTER_ALERTS && hasAlert) ||
+              cat === activeFilter;
             li.hidden = !show;
             if (show) visibleInDay += 1;
           }
@@ -372,7 +445,7 @@
       elList.appendChild(section);
     });
 
-    renderFilterBar(categoriesPresent(days));
+    renderFilterBar(categoriesPresent(days), hasAnyAlerts(days));
 
     elStatus.hidden = true;
     elList.hidden = false;
