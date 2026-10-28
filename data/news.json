@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-10-28T07:00:00+08:00",
+  "title": "香港消防／緊急應變新聞簡報",
+  "subtitle": "供消防處官員參考嘅每日重點新聞",
+  "categories": [
+    "火警",
+    "特別服務",
+    "執法行動",
+    "政策相關",
+    "山火",
+    "天氣風險",
+    "救護",
+    "其他"
+  ],
+  "retentionDays": 5,
+  "days": [
+    {
+      "briefingDate": "2026-10-28",
+      "items": [
+        {
+          "id": "ipark1-epd-followup-20261028",
+          "category": "火警",
+          "title": "I.PARK1 火警跟進　環保署初步懷疑屋頂建築物料肇因",
+          "summary": "環境保護署10月28日就石鼓洲對開綜合廢物管理設施一期（I.PARK1）三級火警作出跟進，指初步懷疑涉及主焚化爐樓第三組模組屋頂建築物料，並非焚化爐或廢物本身。署方會聯同消防處、警方及勞工處繼續調查，並否認網上謠言。設施暫停接收廢物安排仍然生效。",
+          "sources": [
+            {
+              "name": "政府新聞處",
+              "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800272.htm"
+            },
+            {
+              "name": "香港電台",
+              "url": "https://news.rthk.hk/rthk/ch/component/k2/1875411-20261026.htm"
+            }
+          ],
+          "publishedAt": "2026-10-28"
+        }
+      ]
+    },
+    {
+      "briefingDate": "2026-10-26",
+      "items": [
+        {
+          "id": "ipark1-alarm3-fire-20261026",
+          "category": "火警",
+          "title": "石鼓洲旁 I.PARK1 發生三級火警　約970人疏散",
+          "summary": "綜合廢物管理設施一期（I.PARK1）喺10月26日約下午12時40分至12時43分喺石鼓洲對開人工島發生火警，其後升為三級。消防調動五條喉同五隊呼吸器小隊灌救，設施約970名員工疏散，一人不適送院；火勢大致喺約下午4時45分受控，起因仍調查緊。",
+          "sources": [
+            {
+              "name": "香港電台",
+              "url": "https://news.rthk.hk/rthk/ch/component/k2/1875411-20261026.htm"
+            },
+            {
+              "name": "政府新聞處",
+              "url": "https://www.info.gov.hk/gia/general/202610/26/P2026102600730.htm"
+            }
+          ],
+          "publishedAt": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "briefingDate": "2026-10-25",
+      "items": [
+        {
+          "id": "por-lo-shan-hillfire-20261025",
+          "category": "山火",
+          "title": "屯門菠蘿山山火　直升機投擲水彈撲救",
+          "summary": "10月25日中午，屯門黃賢街對面菠蘿山發生山火，現場濃煙明顯。消防處聯同政府飛行服務隊出動直升機投擲水彈協助撲救，暫無受傷或受困報告。當日早上已發出黃色火災危險警告，天氣受乾燥東北季候風影響。",
+          "sources": [
+            {
+              "name": "大公報",
+              "url": "https://www.tkww.hk/epaper/view/newsDetail/2114422911510122496.html"
+            },
+            {
+              "name": "英文虎報",
+              "url": "https://www.thestandard.com.hk/news/article/346423/Por-Lo-Shan-hill-fire-erupts-in-Tuen-Mun"
+            }
+          ],
+          "publishedAt": "2026-10-25"
+        }
+      ]
+    }
+  ]
+}
