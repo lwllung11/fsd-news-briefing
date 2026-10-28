@@ -4,7 +4,7 @@
 
 內容以**最近最多 5 日**（`retentionDays`）滾動保存；每日只需覆寫 JSON，唔使改版面。
 
-支援分類標籤、跨日分類篩選，以及每則新聞 1–2 個資料來源連結。
+支援分類標籤、跨日分類篩選、每則新聞 1–2 個資料來源，以及**劏房／醫院重點提醒**（`alerts`）。
 
 ## 檔案結構
 
@@ -44,6 +44,7 @@ python3 -m http.server 8080
 4. 保留最多 **`retentionDays`（預設 5）** 個日條目；多出嘅最舊日子刪走。
 5. 空 `items` 嘅日子可以唔寫入（頁面會跳過空日）。
 6. 每則新聞：`category` 必須係允許清單；`sources` 長度 1–2（建議 2 個主流來源）。
+7. 若涉及劏房或醫院，加上 `"alerts": ["劏房"]` 及／或 `"醫院"`（見下節）。
 
 ## 允許嘅分類（`category`）
 
@@ -61,6 +62,28 @@ python3 -m http.server 8080
 | `其他` | 後備 |
 
 未知值會顯示為「其他」。篩選列顯示「全部」＋**檔案中實際出現**嘅分類（跨所有可見日子）。
+
+## 重點提醒（`alerts`）— 劏房／醫院
+
+當新聞涉及**劏房**或**醫院**，新聞官必須加上 `alerts`，頁面會以醒目樣式提示官員（琥珀色卡片 +「⚠ 重點提醒」文字橫幅；唔單靠顏色）。
+
+### 允許嘅提醒標籤（一字不差）
+
+| 標籤 | 何時使用 |
+|------|----------|
+| `劏房` | 事件／政策／執法涉及劏房、分間樓宇單位等 |
+| `醫院` | 涉及醫院、醫療處所、醫院管理局設施等 |
+
+可同時標註兩個，例如：`"alerts": ["劏房", "醫院"]`。  
+空白、缺省、或非允許值 → **唔顯示**重點樣式。  
+（可選）頂層 `alertLabels` 列出允許清單，方便新聞官對照。
+
+### 新聞官指引
+
+1. 只喺內容**確實相關**時加 `alerts`；唔好濫用。
+2. 現有示例（I.PARK1、山火）**唔屬**劏房／醫院，故 seed **無** `alerts`。
+3. 有 `alerts` 嘅項目會喺**同一日內排前**；篩選列會出現「重點提醒」chip（當日檔案有至少一則時）。
+4. **唔建議**用 `priority` 布林；請用 `alerts` 陣列表達重點類型。
 
 ## JSON Schema（`data/news.json`）
 
@@ -81,7 +104,9 @@ python3 -m http.server 8080
 | `days[].items[].sources` | array | ✓ | 長度 **1–2**；`{ "name", "url" }`（**唔再用** `sourceName`／`sourceUrl`） |
 | `days[].items[].sources[].name` | string | ✓ | 來源顯示名 |
 | `days[].items[].sources[].url` | string | ✓ | `https://...` |
+| `alertLabels` | string[] | | 建議 `["劏房","醫院"]`，供新聞官參考 |
 | `days[].items[].publishedAt` | string | | 原文日期 `YYYY-MM-DD` |
+| `days[].items[].alerts` | string[] | | 可選；僅允許 `劏房`、`醫院`；缺省／空＝無重點提醒 |
 
 **已移除（breaking）：** 頂層 `briefingDate`、頂層 `items`。
 
@@ -97,20 +122,22 @@ python3 -m http.server 8080
     "山火", "天氣風險", "救護", "其他"
   ],
   "retentionDays": 5,
+  "alertLabels": ["劏房", "醫院"],
   "days": [
     {
       "briefingDate": "2026-10-28",
       "items": [
         {
-          "id": "example-20261028",
+          "id": "example-subdivided-20261028",
           "category": "火警",
-          "title": "標題",
+          "title": "標題（示例：劏房火警）",
           "summary": "第一句。第二句。",
           "sources": [
             { "name": "香港電台", "url": "https://example.com/a" },
             { "name": "政府新聞處", "url": "https://example.com/b" }
           ],
-          "publishedAt": "2026-10-28"
+          "publishedAt": "2026-10-28",
+          "alerts": ["劏房"]
         }
       ]
     },
@@ -129,6 +156,7 @@ python3 -m http.server 8080
 - 按 `briefingDate` 分組顯示（最新在上）
 - 頁頭顯示「最新簡報」日期 + `updatedAt`；頁尾顯示 `updatedAt`
 - 分類篩選作用於所有可見日子嘅卡片；某日篩完無結果會隱藏該日區塊
+- 有 `alerts` 嘅卡片顯示「重點提醒」橫幅並置頂該日；可篩「重點提醒」
 - 資料來源顯示為「資料來源：A · B」
 
 ## 部署
