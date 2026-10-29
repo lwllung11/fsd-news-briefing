@@ -1,30 +1,146 @@
-{updatedAt: "2026-10-29T07:00:00+08:00"
-title: "香港消防／緊急應變新聞簡報"
-subtitle: "供消防處官員參考嘅每日重點新聞"
-
-categories: [8 個項目]
-0: "火警"
-1: "特別服務"
-2: "執法行動"
-3: "政策相關"
-4: "山火"
-5: "天氣風險"
-6: "救護"
-7: "其他"
-retentionDays: 5
-
-days: [4 個項目]
-
-0: {2 個鍵}
-
-1: {2 個鍵}
-
-2: {2 個鍵}
-
-3: {2 個鍵}
-
-alertLabels: [2 個項目]
-0: "劏房"
-1: "醫院"}
+{
+  "updatedAt": "2026-10-29T07:00:00+08:00",
+  "title": "香港消防／緊急應變新聞簡報",
+  "subtitle": "供消防處官員參考嘅每日重點新聞",
+  "categories": [
+    "火警",
+    "特別服務",
+    "執法行動",
+    "政策相關",
+    "山火",
+    "天氣風險",
+    "救護",
+    "其他"
+  ],
+  "retentionDays": 5,
+  "days": [
+    {
+      "briefingDate": "2026-10-29",
+      "items": [
+        {
+          "id": "wang-fuk-court-reform-20261029",
+          "category": "政策相關",
+          "title": "宏福苑獨立委員會報告料即將公開　政府擬推消防及大維修全面改革",
+          "summary": "據了解，大埔宏福苑火災獨立委員會報告最快於近日公開，政府將一併交代改革措施，並成立由政務司司長領導嘅督導委員會監督落實。消防方面方向包括長時間關閉消防裝置須事先申請、損壞須24小時內通報，以及註冊消防承辦商五年續牌；亦會修訂《消防條例》等法例，並加強大維修同圍標規管。",
+          "sources": [
+            {
+              "name": "無綫新聞",
+              "url": "https://news.tvb.com/tc/1203236-%E5%AE%8F%E7%A6%8F%E8%8B%91%E6%93%9A%E6%82%89%E6%94%BF%E5%BA%9C%E8%A8%AD%E5%A7%94%E5%93%A1%E6%9C%83%E8%90%BD%E5%AF%A6%E5%8F%8A%E7%9B%A3%E7%9D%A3%E6%94%B9%E9%9D%A9%E6%8E%AA%E6%96%BD%E5%8A%A0%E5%BC%B7%E6%B6%88%E9%98%B2%E5%AE%89%E5%85%A8%E5%8F%8A%E5%A4%A7%E7%B6%AD%E4%BF%AE%E8%A6%8F%E7%AE%A1%E7%AD%89"
+            },
+            {
+              "name": "大公報",
+              "url": "https://epaper.tkww.hk/a/202610/28/AP6ae109eae4b03b525f957e40.html"
+            }
+          ],
+          "publishedAt": "2026-10-28"
+        },
+        {
+          "id": "tsuen-wan-restaurant-fire-20261028",
+          "category": "火警",
+          "title": "荃灣鱟地坊餐廳火警　濃煙捲半空　院舍長者不適送院",
+          "summary": "10月28日下午約5時，荃灣鱟地坊／天保大樓地下一間餐廳起火冒煙，濃煙一度席捲半空。約20名職員及顧客疏散，消防到場後迅速救熄，初步相信涉及爐頭搶火，事件無可疑。一名居於樓上院舍嘅90歲男子懷疑不適，送仁濟醫院治理。",
+          "sources": [
+            {
+              "name": "香港電台",
+              "url": "https://news.rthk.hk/rthk/ch/component/k2/1875680-20261028.htm"
+            },
+            {
+              "name": "點新聞",
+              "url": "https://www.dotdotnews.com/a/202610/28/AP6ae1de35e4b02fd1c5f5d101.html"
+            }
+          ],
+          "publishedAt": "2026-10-28"
+        },
+        {
+          "id": "yuen-long-ambulance-crash-20261028",
+          "category": "救護",
+          "title": "元朗朗日路救護車疑失控撞欄　三名救護員輕傷送院",
+          "summary": "10月28日早上約7時03分，一輛救護車沿元朗朗日路近元朗站往博愛醫院方向行駛時，懷疑失控撞毀路邊鐵欄。車上司機及兩名救護員共三人感頭暈輕傷、意識清醒，由另一輛救護車送博愛醫院；據了解當時正執行救護任務，車上並無病人。意外原因仍由警方調查。",
+          "sources": [
+            {
+              "name": "香港01",
+              "url": "https://www.hk01.com/%E7%AA%81%E7%99%BC/60404327/%E5%85%83%E6%9C%97%E6%9C%97%E6%97%A5%E8%B7%AF%E6%95%91%E8%AD%B7%E8%BB%8A%E5%A4%B1%E4%BA%8B%E6%92%9E%E6%AC%84-3%E6%95%91%E8%AD%B7%E5%93%A1%E5%8F%97%E5%82%B7%E9%80%81%E9%99%A2"
+            },
+            {
+              "name": "東方日報",
+              "url": "https://hk.on.cc/hk/bkn/cnt/news/20261028/bkn-20261028080002674-1028_00822_001.html"
+            }
+          ],
+          "publishedAt": "2026-10-28"
+        }
+      ]
+    },
+    {
+      "briefingDate": "2026-10-28",
+      "items": [
+        {
+          "id": "ipark1-epd-followup-20261028",
+          "category": "火警",
+          "title": "I.PARK1 火警跟進　環保署初步懷疑屋頂建築物料肇因",
+          "summary": "環境保護署10月28日就石鼓洲對開綜合廢物管理設施一期（I.PARK1）三級火警作出跟進，指初步懷疑涉及主焚化爐樓第三組模組屋頂建築物料，並非焚化爐或廢物本身。署方會聯同消防處、警方及勞工處繼續調查，並否認網上謠言。設施暫停接收廢物安排仍然生效。",
+          "sources": [
+            {
+              "name": "政府新聞處",
+              "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800272.htm"
+            },
+            {
+              "name": "香港電台",
+              "url": "https://news.rthk.hk/rthk/ch/component/k2/1875411-20261026.htm"
+            }
+          ],
+          "publishedAt": "2026-10-28"
+        }
+      ]
+    },
+    {
+      "briefingDate": "2026-10-26",
+      "items": [
+        {
+          "id": "ipark1-alarm3-fire-20261026",
+          "category": "火警",
+          "title": "石鼓洲旁 I.PARK1 發生三級火警　約970人疏散",
+          "summary": "綜合廢物管理設施一期（I.PARK1）喺10月26日約下午12時40分至12時43分喺石鼓洲對開人工島發生火警，其後升為三級。消防調動五條喉同五隊呼吸器小隊灌救，設施約970名員工疏散，一人不適送院；火勢大致喺約下午4時45分受控，起因仍調查緊。",
+          "sources": [
+            {
+              "name": "香港電台",
+              "url": "https://news.rthk.hk/rthk/ch/component/k2/1875411-20261026.htm"
+            },
+            {
+              "name": "政府新聞處",
+              "url": "https://www.info.gov.hk/gia/general/202610/26/P2026102600730.htm"
+            }
+          ],
+          "publishedAt": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "briefingDate": "2026-10-25",
+      "items": [
+        {
+          "id": "por-lo-shan-hillfire-20261025",
+          "category": "山火",
+          "title": "屯門菠蘿山山火　直升機投擲水彈撲救",
+          "summary": "10月25日中午，屯門黃賢街對面菠蘿山發生山火，現場濃煙明顯。消防處聯同政府飛行服務隊出動直升機投擲水彈協助撲救，暫無受傷或受困報告。當日早上已發出黃色火災危險警告，天氣受乾燥東北季候風影響。",
+          "sources": [
+            {
+              "name": "大公報",
+              "url": "https://www.tkww.hk/epaper/view/newsDetail/2114422911510122496.html"
+            },
+            {
+              "name": "英文虎報",
+              "url": "https://www.thestandard.com.hk/news/article/346423/Por-Lo-Shan-hill-fire-erupts-in-Tuen-Mun"
+            }
+          ],
+          "publishedAt": "2026-10-25"
+        }
+      ]
+    }
+  ],
+  "alertLabels": [
+    "劏房",
+    "醫院"
+  ]
+}
 
 Daily briefing 2026-10-29
