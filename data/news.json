@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-10-29T08:41:00+08:00",
+  "updatedAt": "2026-10-29T10:45:00+08:00",
   "title": "香港消防／緊急應變新聞簡報",
-  "subtitle": "供消防處官員參考嘅每日重點新聞",
+  "subtitle": "供消防處官員參考；每日七點更新，涵蓋過去二十四小時",
   "categories": [
     "火警",
     "特別服務",
@@ -21,18 +21,19 @@
           "id": "wang-fuk-court-reform-20261029",
           "category": "政策相關",
           "title": "宏福苑獨立委員會報告料即將公開　政府擬推消防及大維修全面改革",
-          "summary": "據了解，大埔宏福苑火災獨立委員會報告最快於近日公開，政府將一併交代改革措施，並成立由政務司司長領導嘅督導委員會監督落實。消防方面方向包括長時間關閉消防裝置須事先申請、損壞須24小時內通報，以及註冊消防承辦商五年續牌；亦會修訂《消防條例》等法例，並加強大維修同圍標規管。",
+          "summary": "據了解，大埔宏福苑火災獨立委員會報告最快於周四公開；政府擬一連兩日記者會交代改革，包括樓宇維修圍標刑事化、加強主動審核巡查，以及成立由政務司司長領導嘅督導委員會。消防方面建議包括消防裝置證書電子化、警方求助唔再以傳真轉交消防等；報告料亦會點名相關部門責任。",
           "sources": [
+            {
+              "name": "Now新聞",
+              "url": "https://news.now.com/home/local/player?newsId=667455"
+            },
             {
               "name": "無綫新聞",
               "url": "https://news.tvb.com/tc/1203236-%E5%AE%8F%E7%A6%8F%E8%8B%91%E6%93%9A%E6%82%89%E6%94%BF%E5%BA%9C%E8%A8%AD%E5%A7%94%E5%93%A1%E6%9C%83%E8%90%BD%E5%AF%A6%E5%8F%8A%E7%9B%A3%E7%9D%A3%E6%94%B9%E9%9D%A9%E6%8E%AA%E6%96%BD%E5%8A%A0%E5%BC%B7%E6%B6%88%E9%98%B2%E5%AE%89%E5%85%A8%E5%8F%8A%E5%A4%A7%E7%B6%AD%E4%BF%AE%E8%A6%8F%E7%AE%A1%E7%AD%89"
-            },
-            {
-              "name": "大公報",
-              "url": "https://epaper.tkww.hk/a/202610/28/AP6ae109eae4b03b525f957e40.html"
             }
           ],
-          "publishedAt": "2026-10-28"
+          "publishedAt": "2026-10-28",
+          "firstAppearedAt": "2026-10-28T15:08:00+08:00"
         },
         {
           "id": "to-kwa-wan-arson-20261028",
@@ -52,12 +53,13 @@
           "publishedAt": "2026-10-28",
           "alerts": [
             "醫院"
-          ]
+          ],
+          "firstAppearedAt": "2026-10-28T11:37:00+08:00"
         },
         {
           "id": "tsuen-wan-restaurant-fire-20261028",
           "category": "火警",
-          "title": "荃灣鱟地坊餐廳火警　濃煙捲半空　院舍長者不適送院",
+          "title": "【醫院】荃灣鱟地坊餐廳火警　濃煙捲半空　院舍長者不適送院",
           "summary": "10月28日下午約5時，荃灣鱟地坊／天保大樓地下一間餐廳起火冒煙，濃煙一度席捲半空。約20名職員及顧客疏散，消防到場後迅速救熄，初步相信涉及爐頭搶火，事件無可疑。一名居於樓上院舍嘅90歲男子懷疑不適，送仁濟醫院治理。",
           "sources": [
             {
@@ -69,7 +71,11 @@
               "url": "https://www.dotdotnews.com/a/202610/28/AP6ae1de35e4b02fd1c5f5d101.html"
             }
           ],
-          "publishedAt": "2026-10-28"
+          "publishedAt": "2026-10-28",
+          "firstAppearedAt": "2026-10-28T17:00:00+08:00",
+          "alerts": [
+            "醫院"
+          ]
         },
         {
           "id": "yuen-long-ambulance-crash-20261028",
@@ -86,7 +92,8 @@
               "url": "https://hk.on.cc/hk/bkn/cnt/news/20261028/bkn-20261028080002674-1028_00822_001.html"
             }
           ],
-          "publishedAt": "2026-10-28"
+          "publishedAt": "2026-10-28",
+          "firstAppearedAt": "2026-10-28T07:03:00+08:00"
         },
         {
           "id": "ipark1-epd-followup-20261028",
@@ -103,7 +110,8 @@
               "url": "https://news.rthk.hk/rthk/ch/component/k2/1875610-20261028.htm"
             }
           ],
-          "publishedAt": "2026-10-28"
+          "publishedAt": "2026-10-28",
+          "firstAppearedAt": "2026-10-28T11:15:00+08:00"
         },
         {
           "id": "hk-island-industrial-joint-inspection-20261028",
@@ -120,7 +128,8 @@
               "url": "https://www.wenweipo.com/a/202610/28/AP6ae1947de4b0fa89498ab9e2.html"
             }
           ],
-          "publishedAt": "2026-10-28"
+          "publishedAt": "2026-10-28",
+          "firstAppearedAt": "2026-10-28T14:21:00+08:00"
         },
         {
           "id": "ssp-illegal-petrol-station-20261028",
@@ -137,7 +146,8 @@
               "url": "https://www.wenweipo.com/a/202610/28/AP6ae18bf0e4b0fa89498ab829.html"
             }
           ],
-          "publishedAt": "2026-10-28"
+          "publishedAt": "2026-10-28",
+          "firstAppearedAt": "2026-10-27T21:00:00+08:00"
         }
       ]
     },
@@ -159,7 +169,8 @@
               "url": "https://news.rthk.hk/rthk/ch/component/k2/1875411-20261026.htm"
             }
           ],
-          "publishedAt": "2026-10-28"
+          "publishedAt": "2026-10-28",
+          "firstAppearedAt": "2026-10-28T11:15:00+08:00"
         }
       ]
     },
@@ -181,7 +192,8 @@
               "url": "https://www.info.gov.hk/gia/general/202610/26/P2026102600730.htm"
             }
           ],
-          "publishedAt": "2026-10-26"
+          "publishedAt": "2026-10-26",
+          "firstAppearedAt": "2026-10-26T12:40:00+08:00"
         }
       ]
     },
@@ -203,7 +215,8 @@
               "url": "https://www.thestandard.com.hk/news/article/346423/Por-Lo-Shan-hill-fire-erupts-in-Tuen-Mun"
             }
           ],
-          "publishedAt": "2026-10-25"
+          "publishedAt": "2026-10-25",
+          "firstAppearedAt": "2026-10-25T12:00:00+08:00"
         }
       ]
     }

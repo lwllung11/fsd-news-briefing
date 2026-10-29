@@ -21,9 +21,20 @@
   var ALLOWED_ALERTS = ["劏房", "醫院"];
   var FILTER_ALERTS = "重點提醒";
 
+  var WEEKDAY_ZH = [
+    "星期日",
+    "星期一",
+    "星期二",
+    "星期三",
+    "星期四",
+    "星期五",
+    "星期六",
+  ];
+
   var elStatus = document.getElementById("status");
   var elList = document.getElementById("news-list");
   var elFilter = document.getElementById("filter-bar");
+  var elDayNav = document.getElementById("day-nav");
   var elFilterEmpty = document.getElementById("filter-empty");
   var elTitle = document.getElementById("briefing-title");
   var elSubtitle = document.getElementById("briefing-subtitle");
@@ -49,6 +60,27 @@
     return parts[0] + "年" + Number(parts[1]) + "月" + Number(parts[2]) + "日";
   }
 
+  /** Compact label for jump chips, e.g. 10月29日 */
+  function formatDateShort(ymd) {
+    if (!ymd || !/^\d{4}-\d{2}-\d{2}$/.test(ymd)) return ymd || "";
+    var parts = ymd.split("-");
+    return Number(parts[1]) + "月" + Number(parts[2]) + "日";
+  }
+
+  function weekdayZh(ymd) {
+    if (!ymd || !/^\d{4}-\d{2}-\d{2}$/.test(ymd)) return "";
+    var parts = ymd.split("-");
+    var d = new Date(
+      Date.UTC(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]))
+    );
+    if (isNaN(d.getTime())) return "";
+    return WEEKDAY_ZH[d.getUTCDay()] || "";
+  }
+
+  function daySectionId(ymd) {
+    return "day-" + String(ymd || "").replace(/[^0-9-]/g, "");
+  }
+
   function formatDateTimeIso(iso) {
     if (!iso) return "";
     try {
@@ -66,6 +98,36 @@
       return d.toLocaleString("zh-HK", opts) + "（香港時間）";
     } catch (e) {
       return iso;
+    }
+  }
+
+
+  /** 「最早：M月D日 HH:mm」from ISO 8601; empty if missing/invalid. Asia/Hong_Kong. */
+  function formatFirstAppeared(iso) {
+    if (!iso) return "";
+    try {
+      var d = new Date(iso);
+      if (isNaN(d.getTime())) return "";
+      var parts = new Intl.DateTimeFormat("zh-HK", {
+        timeZone: "Asia/Hong_Kong",
+        month: "numeric",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      }).formatToParts(d);
+      var map = {};
+      parts.forEach(function (p) {
+        if (p.type !== "literal") map[p.type] = p.value;
+      });
+      var month = Number(map.month);
+      var day = Number(map.day);
+      var hour = map.hour;
+      var minute = map.minute;
+      if (!month || !day || hour == null || minute == null) return "";
+      return "最早：" + month + "月" + day + "日 " + hour + ":" + minute;
+    } catch (e) {
+      return "";
     }
   }
 
@@ -164,7 +226,6 @@
     );
   }
 
-
   function showError(message) {
     elStatus.hidden = false;
     elStatus.className = "status status--error";
@@ -174,6 +235,10 @@
     elList.innerHTML = "";
     elFilter.hidden = true;
     elFilter.innerHTML = "";
+    if (elDayNav) {
+      elDayNav.hidden = true;
+      elDayNav.innerHTML = "";
+    }
     elFilterEmpty.hidden = true;
   }
 
@@ -184,6 +249,7 @@
     elStatus.textContent = "載入緊簡報內容…";
     elList.hidden = true;
     elFilter.hidden = true;
+    if (elDayNav) elDayNav.hidden = true;
     elFilterEmpty.hidden = true;
   }
 
@@ -234,14 +300,26 @@
       );
     }
 
+    var firstAppearedLabel = formatFirstAppeared(item.firstAppearedAt);
+    var firstAppearedHtml = "";
+    if (firstAppearedLabel) {
+      firstAppearedHtml =
+        '<p class="news-card__first-appeared"><time datetime="' +
+        escapeHtml(item.firstAppearedAt) +
+        '">' +
+        escapeHtml(firstAppearedLabel) +
+        "</time></p>";
+    }
+
     li.innerHTML =
       alertBannerHtml(alerts) +
       '<div class="news-card__meta">' +
       metaParts.join("") +
       "</div>" +
-      "<h2>" +
+      firstAppearedHtml +
+      "<h3 class=\"news-card__title\">" +
       escapeHtml(item.title || "（無標題）") +
-      "</h2>" +
+      "</h3>" +
       '<p class="news-card__summary">' +
       escapeHtml(item.summary || "") +
       "</p>" +
@@ -355,6 +433,96 @@
     elFilter.hidden = false;
   }
 
+  function renderDayNav(days) {
+    if (!elDayNav) return;
+    elDayNav.innerHTML = "";
+    if (days.length <= 1) {
+      elDayNav.hidden = true;
+      return;
+    }
+
+    var label = document.createElement("span");
+    label.className = "day-nav__label";
+    label.textContent = "跳至日期";
+    elDayNav.appendChild(label);
+
+    var list = document.createElement("div");
+    list.className = "day-nav__chips";
+    list.setAttribute("role", "list");
+
+    days.forEach(function (day, index) {
+      var isToday = index === 0;
+      var btn = document.createElement("a");
+      btn.href = "#" + daySectionId(day.briefingDate);
+      btn.className =
+        "day-nav__chip" + (isToday ? " day-nav__chip--today" : "");
+      btn.setAttribute("role", "listitem");
+      btn.setAttribute(
+        "aria-label",
+        (isToday ? "今日 " : "") +
+          formatDateYmd(day.briefingDate) +
+          " " +
+          weekdayZh(day.briefingDate) +
+          "，" +
+          day.items.length +
+          " 則"
+      );
+
+      var text = document.createElement("span");
+      text.className = "day-nav__chip-date";
+      text.textContent = isToday
+        ? "今日 · " + formatDateShort(day.briefingDate)
+        : formatDateShort(day.briefingDate);
+
+      var count = document.createElement("span");
+      count.className = "day-nav__chip-count";
+      count.textContent = String(day.items.length);
+
+      btn.appendChild(text);
+      btn.appendChild(count);
+
+      btn.addEventListener("click", function (e) {
+        var target = document.getElementById(daySectionId(day.briefingDate));
+        if (!target) return;
+        e.preventDefault();
+        /* Expand collapsed older day when jumping */
+        if (target.classList.contains("day-section--collapsed")) {
+          target.classList.remove("day-section--collapsed");
+          var toggle = target.querySelector(".day-section__toggle");
+          if (toggle) {
+            toggle.setAttribute("aria-expanded", "true");
+            var sr = toggle.querySelector(".day-section__toggle-sr");
+            if (sr) sr.textContent = "收起較早簡報";
+          }
+        }
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        try {
+          history.replaceState(null, "", "#" + daySectionId(day.briefingDate));
+        } catch (err) {
+          /* ignore */
+        }
+        if (toggleFocusable(target)) {
+          /* move focus for a11y after jump */
+        }
+      });
+
+      list.appendChild(btn);
+    });
+
+    elDayNav.appendChild(list);
+    elDayNav.hidden = false;
+  }
+
+  function toggleFocusable(section) {
+    var heading = section.querySelector(".day-section__heading");
+    if (!heading) return false;
+    if (!heading.hasAttribute("tabindex")) {
+      heading.setAttribute("tabindex", "-1");
+    }
+    heading.focus({ preventScroll: true });
+    return true;
+  }
+
   function applyFilter() {
     var anyVisible = false;
     Array.prototype.forEach.call(
@@ -375,11 +543,161 @@
           }
         );
         section.hidden = visibleInDay === 0;
+        /* Update visible count badge when filtering */
+        var countEl = section.querySelector(".day-section__count");
+        if (countEl) {
+          var total = section.querySelectorAll(".news-card").length;
+          if (activeFilter === "全部") {
+            countEl.textContent = total + " 則";
+          } else {
+            countEl.textContent = visibleInDay + "／" + total + " 則";
+          }
+        }
         if (visibleInDay > 0) anyVisible = true;
       }
     );
     elFilterEmpty.hidden = anyVisible;
     elList.hidden = !anyVisible;
+    if (elDayNav) {
+      var chips = elDayNav.querySelectorAll(".day-nav__chip");
+      var visibleChips = 0;
+      Array.prototype.forEach.call(chips, function (chip) {
+        var href = chip.getAttribute("href") || "";
+        var id = href.replace(/^#/, "");
+        var section = id ? document.getElementById(id) : null;
+        var hide = !section || section.hidden;
+        chip.hidden = hide;
+        if (!hide) visibleChips += 1;
+      });
+      elDayNav.hidden = visibleChips <= 1;
+    }
+  }
+
+  function buildDayHeading(day, isToday, itemCount) {
+    var heading = document.createElement("div");
+    heading.className = "day-section__heading";
+
+    var accent = document.createElement("span");
+    accent.className = "day-section__accent";
+    accent.setAttribute("aria-hidden", "true");
+    heading.appendChild(accent);
+
+    var main = document.createElement("div");
+    main.className = "day-section__heading-main";
+
+    var top = document.createElement("div");
+    top.className = "day-section__heading-top";
+
+    if (isToday) {
+      var todayBadge = document.createElement("span");
+      todayBadge.className = "day-badge day-badge--today";
+      todayBadge.textContent = "今日";
+      top.appendChild(todayBadge);
+    }
+
+    var label = document.createElement("span");
+    label.className = "day-section__label";
+    label.textContent = "簡報";
+    top.appendChild(label);
+
+    var count = document.createElement("span");
+    count.className = "day-section__count";
+    count.textContent = itemCount + " 則";
+    top.appendChild(count);
+
+    main.appendChild(top);
+
+    var dateRow = document.createElement("div");
+    dateRow.className = "day-section__date-row";
+
+    var time = document.createElement("time");
+    time.className = "day-section__date";
+    time.dateTime = day.briefingDate;
+    time.textContent = formatDateYmd(day.briefingDate);
+    dateRow.appendChild(time);
+
+    var weekday = weekdayZh(day.briefingDate);
+    if (weekday) {
+      var wd = document.createElement("span");
+      wd.className = "day-section__weekday";
+      wd.textContent = weekday;
+      dateRow.appendChild(wd);
+    }
+
+    main.appendChild(dateRow);
+    heading.appendChild(main);
+
+    if (!isToday) {
+      var toggle = document.createElement("button");
+      toggle.type = "button";
+      toggle.className = "day-section__toggle";
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute(
+        "aria-controls",
+        daySectionId(day.briefingDate) + "-list"
+      );
+      toggle.innerHTML =
+        '<span class="day-section__toggle-sr">展開較早簡報</span>' +
+        '<svg class="day-section__chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>';
+      heading.appendChild(toggle);
+    }
+
+    return heading;
+  }
+
+  function renderDaySection(day, index) {
+    var isToday = index === 0;
+    var section = document.createElement("li");
+    section.className =
+      "day-section" +
+      (isToday ? " day-section--today" : " day-section--earlier day-section--collapsed");
+    section.id = daySectionId(day.briefingDate);
+    section.setAttribute("data-briefing-date", day.briefingDate);
+
+    var heading = buildDayHeading(day, isToday, day.items.length);
+    /* Use h2 for day heading accessibility */
+    var h2 = document.createElement("h2");
+    h2.className = "day-section__title-sr";
+    h2.textContent =
+      (isToday ? "今日簡報：" : "簡報：") +
+      formatDateYmd(day.briefingDate) +
+      (weekdayZh(day.briefingDate) ? " " + weekdayZh(day.briefingDate) : "") +
+      "，共 " +
+      day.items.length +
+      " 則";
+    section.appendChild(h2);
+    section.appendChild(heading);
+
+    var ol = document.createElement("ol");
+    ol.className = "day-section__list";
+    ol.id = daySectionId(day.briefingDate) + "-list";
+    day.items.forEach(function (item) {
+      ol.appendChild(renderItem(item));
+    });
+    section.appendChild(ol);
+
+    if (!isToday) {
+      var toggle = heading.querySelector(".day-section__toggle");
+      if (toggle) {
+        toggle.addEventListener("click", function () {
+          var collapsed = section.classList.toggle("day-section--collapsed");
+          toggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+          var sr = toggle.querySelector(".day-section__toggle-sr");
+          if (sr) {
+            sr.textContent = collapsed ? "展開較早簡報" : "收起較早簡報";
+          }
+        });
+        /* Also allow clicking the heading body (not just the button) */
+        heading.addEventListener("click", function (e) {
+          if (e.target.closest && e.target.closest("a, button")) return;
+          if (e.target === toggle || toggle.contains(e.target)) return;
+          toggle.click();
+        });
+        heading.style.cursor = "pointer";
+      }
+    }
+
+    return section;
   }
 
   function render(data) {
@@ -419,37 +737,35 @@
       elFooterUpdated.textContent = "頁面內容最後更新：" + updatedText;
     }
 
-    days.forEach(function (day) {
-      var section = document.createElement("li");
-      section.className = "day-section";
-      section.setAttribute("data-briefing-date", day.briefingDate);
-
-      var heading = document.createElement("h2");
-      heading.className = "day-section__heading";
-      var time = document.createElement("time");
-      time.dateTime = day.briefingDate;
-      time.textContent = formatDateYmd(day.briefingDate);
-      var label = document.createElement("span");
-      label.className = "day-section__label";
-      label.textContent = "簡報";
-      heading.appendChild(label);
-      heading.appendChild(time);
-      section.appendChild(heading);
-
-      var ol = document.createElement("ol");
-      ol.className = "day-section__list";
-      day.items.forEach(function (item) {
-        ol.appendChild(renderItem(item));
-      });
-      section.appendChild(ol);
-      elList.appendChild(section);
+    days.forEach(function (day, index) {
+      elList.appendChild(renderDaySection(day, index));
     });
 
     renderFilterBar(categoriesPresent(days), hasAnyAlerts(days));
+    renderDayNav(days);
 
     elStatus.hidden = true;
     elList.hidden = false;
     elFilterEmpty.hidden = true;
+
+    /* Honor hash deep-link after render */
+    if (location.hash && location.hash.indexOf("#day-") === 0) {
+      var hashTarget = document.getElementById(location.hash.slice(1));
+      if (hashTarget) {
+        if (hashTarget.classList.contains("day-section--collapsed")) {
+          hashTarget.classList.remove("day-section--collapsed");
+          var t = hashTarget.querySelector(".day-section__toggle");
+          if (t) {
+            t.setAttribute("aria-expanded", "true");
+            var sr = t.querySelector(".day-section__toggle-sr");
+            if (sr) sr.textContent = "收起較早簡報";
+          }
+        }
+        setTimeout(function () {
+          hashTarget.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 50);
+      }
+    }
   }
 
   function load() {

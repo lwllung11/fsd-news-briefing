@@ -44,7 +44,8 @@ python3 -m http.server 8080
 4. 保留最多 **`retentionDays`（預設 5）** 個日條目；多出嘅最舊日子刪走。
 5. 空 `items` 嘅日子可以唔寫入（頁面會跳過空日）。
 6. 每則新聞：`category` 必須係允許清單；`sources` 長度 1–2（建議 2 個主流來源）。
-7. 若涉及劏房或醫院，加上 `"alerts": ["劏房"]` 及／或 `"醫院"`（見下節）。
+7. 每則新聞必須有 `firstAppearedAt`（ISO 8601，帶 `+08:00`），標示該則**最早出現**時間；頁面顯示為「最早：M月D日 HH:mm」。舊則缺省可接受（唔顯示）。
+8. 若涉及劏房或醫院，加上 `"alerts": ["劏房"]` 及／或 `"醫院"`（見下節）。
 
 ## 允許嘅分類（`category`）
 
@@ -106,6 +107,7 @@ python3 -m http.server 8080
 | `days[].items[].sources[].url` | string | ✓ | `https://...` |
 | `alertLabels` | string[] | | 建議 `["劏房","醫院"]`，供新聞官參考 |
 | `days[].items[].publishedAt` | string | | 原文日期 `YYYY-MM-DD` |
+| `days[].items[].firstAppearedAt` | string | ✓（新則） | 該則最早出現時間，ISO 8601 + `+08:00`（例 `2026-10-28T11:37:00+08:00`）；頁面顯示「最早：10月28日 11:37」。舊則缺省可接受（唔顯示） |
 | `days[].items[].alerts` | string[] | | 可選；僅允許 `劏房`、`醫院`；缺省／空＝無重點提醒 |
 
 **已移除（breaking）：** 頂層 `briefingDate`、頂層 `items`。
@@ -137,6 +139,7 @@ python3 -m http.server 8080
             { "name": "政府新聞處", "url": "https://example.com/b" }
           ],
           "publishedAt": "2026-10-28",
+          "firstAppearedAt": "2026-10-28T11:37:00+08:00",
           "alerts": ["劏房"]
         }
       ]
@@ -157,6 +160,7 @@ python3 -m http.server 8080
 - 頁頭顯示「最新簡報」日期 + `updatedAt`；頁尾顯示 `updatedAt`
 - 分類篩選作用於所有可見日子嘅卡片；某日篩完無結果會隱藏該日區塊
 - 有 `alerts` 嘅卡片顯示「重點提醒」橫幅並置頂該日；可篩「重點提醒」
+- 有 `firstAppearedAt` 嘅卡片顯示「最早：M月D日 HH:mm」（香港時間）；缺省／無效則唔顯示
 - 資料來源顯示為「資料來源：A · B」
 
 ## 部署
