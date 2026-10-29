@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T08:36:00+08:00",
+  "updatedAt": "2026-10-29T08:41:00+08:00",
   "title": "香港消防／緊急應變新聞簡報",
   "subtitle": "供消防處官員參考嘅每日重點新聞",
   "categories": [
@@ -84,6 +84,57 @@
             {
               "name": "東方日報",
               "url": "https://hk.on.cc/hk/bkn/cnt/news/20261028/bkn-20261028080002674-1028_00822_001.html"
+            }
+          ],
+          "publishedAt": "2026-10-28"
+        },
+        {
+          "id": "ipark1-epd-followup-20261028",
+          "category": "火警",
+          "title": "I.PARK1 火警跟進　環保署初步懷疑屋頂建築物料肇因",
+          "summary": "環境保護署10月28日就石鼓洲對開綜合廢物管理設施一期（I.PARK1）三級火警作出跟進，指初步懷疑涉及主焚化爐樓第三組模組屋頂建築物料，並非焚化爐或廢物本身。署方會聯同消防處、警方及勞工處繼續調查，並否認網上謠言。設施暫停接收廢物安排仍然生效。",
+          "sources": [
+            {
+              "name": "政府新聞處",
+              "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800272.htm"
+            },
+            {
+              "name": "香港電台",
+              "url": "https://news.rthk.hk/rthk/ch/component/k2/1875610-20261028.htm"
+            }
+          ],
+          "publishedAt": "2026-10-28"
+        },
+        {
+          "id": "hk-island-industrial-joint-inspection-20261028",
+          "category": "執法行動",
+          "title": "消防處聯同屋宇署巡查港島工廈　揭42項火警危險違規",
+          "summary": "10月27日消防處與屋宇署於港島區一幢工業大廈做恆常聯合巡查，派出9名消防人員，發現42項火警危險違規，主要包括雜物阻塞逃生途徑及防煙門被楔開。部門會跟進巡查，可檢控或發「消除火警危險通知書」；並呼籲業主／佔用人保養消防裝置、勿阻塞逃生途徑、保持防煙門關閉。",
+          "sources": [
+            {
+              "name": "星島頭條",
+              "url": "https://www.stheadline.com/breaking-news/3630815/%E6%B6%88%E9%98%B2%E8%99%95%E5%B1%8B%E5%AE%87%E7%BD%B2%E8%81%AF%E5%90%88%E5%B7%A1%E6%9F%A5%E6%B8%AF%E5%B3%B6%E5%8D%80%E5%B7%A5%E5%BB%88-%E6%8F%AD42%E9%A0%85%E7%81%AB%E8%AD%A6%E5%8D%B1%E9%9A%AA%E9%81%95%E8%A6%8F%E4%BA%8B%E9%A0%85"
+            },
+            {
+              "name": "文匯報",
+              "url": "https://www.wenweipo.com/a/202610/28/AP6ae1947de4b0fa89498ab9e2.html"
+            }
+          ],
+          "publishedAt": "2026-10-28"
+        },
+        {
+          "id": "ssp-illegal-petrol-station-20261028",
+          "category": "執法行動",
+          "title": "海關聯同消防處深水埗大窩坪搗流動非法加油站　拘兩男檢約220公升未完稅汽油",
+          "summary": "10月27日晚海關聯同消防處於深水埗大窩坪海水配水庫外搗破流動非法加油站，檢約220公升懷疑未完稅汽油及入油工具，扣兩輛私家車；拘20歲操作員及35歲光顧司機。當局指非法油站欠缺合規防火裝置，涉及《消防（消除火警危險）規例》、《危險品條例》等，並提醒可經「油擊」應用或5577 9666舉報。",
+          "sources": [
+            {
+              "name": "香港01",
+              "url": "https://www.hk01.com/%E7%AA%81%E7%99%BC/60404566/%E6%B5%B7%E9%97%9C%E6%B6%88%E9%98%B2%E5%A4%A7%E7%AA%A9%E5%9D%AA%E9%85%8D%E6%B0%B4%E5%BA%AB%E6%90%97%E9%9D%9E%E6%B3%95%E6%B2%B9%E7%AB%99-%E6%8B%98%E5%85%A9%E7%94%B7%E6%AA%A2220%E5%85%AC%E5%8D%87%E6%9C%AA%E5%AE%8C%E7%A8%85%E6%B1%BD%E6%B2%B9"
+            },
+            {
+              "name": "文匯報",
+              "url": "https://www.wenweipo.com/a/202610/28/AP6ae18bf0e4b0fa89498ab829.html"
             }
           ],
           "publishedAt": "2026-10-28"
