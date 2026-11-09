@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-10T06:50:00+08:00",
+  "updatedAt": "2026-11-10T06:55:00+08:00",
   "title": "香港消防／緊急應變新聞簡報",
   "subtitle": "供消防處官員參考；每日七點更新，涵蓋過去二十四小時",
   "categories": [
@@ -39,6 +39,38 @@
           ]
         },
         {
+          "id": "emsd-tairi-elevator-firedoor-criminal-probe-20261109",
+          "category": "執法行動",
+          "title": "臺日電梯約720部升降機漏裝耐火門框組件　機電署報警刑事調查",
+          "summary": "機電署11月9日匯報，臺日安裝工程有限公司承辦的升降機約九成（約720部）未依法安裝耐火門框組件。署方指情況涉嚴重疏忽及行為不當，已報警作刑事調查，並要求由月中起展開執修；執修方案經消防顧問審視及耐火測試。屬升降機防火分隔／建築消防安全執法相關。",
+          "sources": [
+            {
+              "name": "香港政府新聞網",
+              "url": "https://www.news.gov.hk/chi/2026/11/20261109/20261109_170214_616.html"
+            },
+            {
+              "name": "香港電台",
+              "url": "https://news.rthk.hk/rthk/ch/component/k2/1877126-20261109.htm"
+            }
+          ],
+          "publishedAt": "2026-11-09",
+          "firstAppearedAt": "2026-11-09T15:53:00+08:00"
+        },
+        {
+          "id": "yau-lai-estate-yan-lai-house-kitchen-fire-20261109",
+          "category": "火警",
+          "title": "油麗邨仁麗樓單位廚房疑雜物起火　消防救熄無人傷",
+          "summary": "11月9日晚上近7時，觀塘油麗邨仁麗樓一個單位廚房起火，住戶報案；消防到場迅速救熄並協助疏散，無人受傷。初步懷疑廚房雜物起火，並無可疑。屬公屋單位火警。",
+          "sources": [
+            {
+              "name": "香港01",
+              "url": "https://www.hk01.com/%E7%AA%81%E7%99%BC/60408858/%E6%B2%B9%E9%BA%97%E9%82%A8%E4%BB%81%E9%BA%97%E6%A8%93%E5%96%AE%E4%BD%8D%E8%B5%B7%E7%81%AB-%E6%B6%88%E9%98%B2%E6%95%91%E7%86%84%E7%84%A1%E4%BA%BA%E5%82%B7-%E5%88%9D%E6%AD%A5%E7%96%91%E6%B6%89%E5%BB%9A%E6%88%BF%E9%9B%9C%E7%89%A9"
+            }
+          ],
+          "publishedAt": "2026-11-09",
+          "firstAppearedAt": "2026-11-09T19:00:00+08:00"
+        },
+        {
           "id": "lok-kiu-house-drill-reschedule-20261109",
           "category": "政策相關",
           "title": "洪水橋樂翹樓原定宏福苑大火一周年辦火警演習　房協致歉改期",
@@ -73,6 +105,20 @@
           ],
           "publishedAt": "2026-11-09",
           "firstAppearedAt": "2026-11-09T18:40:00+08:00"
+        },
+        {
+          "id": "ipark1-shek-kwu-chau-nof3-fire-followup-20261109",
+          "category": "其他",
+          "title": "石鼓洲I.PARK1上月三級火跟進　環保署初步疑樓頂收尾工程肇事",
+          "summary": "環保署向離島區議會提交文件指，石鼓洲I.PARK1綜合廢物管理設施10月26日第三模組樓頂三級火，初步懷疑與樓頂收尾工程有關，而非焚化工序或垃圾引起。第一、二模組已重啟試運，第三模組仍在評估修復；文件擬於11月10日區議會討論。屬大型設施／工地火警跟進。",
+          "sources": [
+            {
+              "name": "香港01",
+              "url": "https://www.hk01.com/%E7%A4%BE%E6%9C%83%E6%96%B0%E8%81%9E/60408411/%E7%9F%B3%E9%BC%93%E6%B4%B2%E7%84%9A%E5%8C%96%E5%BB%A0%E4%B8%89%E7%B4%9A%E7%81%AB-%E7%92%B0%E4%BF%9D%E7%BD%B2-%E5%88%9D%E6%AD%A5%E7%96%91%E8%88%87%E5%B7%A5%E7%A8%8B%E6%9C%89%E9%97%9C-%E9%9D%9E%E7%84%9A%E5%8C%96%E5%B7%A5%E5%BA%8F%E5%BC%95%E8%B5%B7"
+            }
+          ],
+          "publishedAt": "2026-11-09",
+          "firstAppearedAt": "2026-11-09T14:00:00+08:00"
         },
         {
           "id": "tsui-ping-estate-powerbank-fire-20261109",
