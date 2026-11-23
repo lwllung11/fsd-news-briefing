@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T06:37:00+08:00",
+  "updatedAt": "2026-11-24T06:50:00+08:00",
   "title": "香港消防／緊急應變新聞簡報",
   "subtitle": "供消防處官員參考；每日七點更新，涵蓋過去二十四小時",
   "categories": [
@@ -18,6 +18,133 @@
     "醫院"
   ],
   "days": [
+    {
+      "briefingDate": "2026-11-24",
+      "items": [
+        {
+          "id": "oi-tung-estate-oi-chak-house-fire-20261123",
+          "category": "火警",
+          "title": "筲箕灣愛東邨愛澤樓中層單位起火冒煙　大批住戶沿後樓梯疏散",
+          "summary": "昨晚約10時，筲箕灣愛東邨愛澤樓一個中層單位起火冒煙，大批住戶沿後樓梯逃生疏散。消防到場開喉將火救熄，起火原因有待調查。",
+          "sources": [
+            {
+              "name": "香港01",
+              "url": "https://www.hk01.com/%E7%AA%81%E7%99%BC/60414162/%E7%AD%B2%E7%AE%95%E7%81%A3%E6%84%9B%E6%9D%B1%E9%82%A8%E6%84%9B%E6%BE%A4%E6%A8%93%E4%B8%AD%E5%B1%A4%E5%96%AE%E4%BD%8D%E5%A4%B1%E7%81%AB%E5%86%92%E7%85%99-%E5%A4%A7%E6%89%B9%E4%BD%8F%E6%88%B6%E6%B2%BF%E5%BE%8C%E6%A8%93%E6%A2%AF%E9%80%83%E7%94%9F"
+            },
+            {
+              "name": "The Standard",
+              "url": "https://www.thestandard.com.hk/news/article/349404/Fire-at-Shau-Kei-Wan-estate-flat-prompts-evacuation"
+            }
+          ],
+          "firstAppearedAt": "2026-11-23T22:00:00+08:00",
+          "publishedAt": "2026-11-23"
+        },
+        {
+          "id": "tin-shui-wai-tin-ho-road-rubbish-fire-20261123",
+          "category": "火警",
+          "title": "天水圍天河路膠箱木板起火　途人持滅火筒撲救　疑煙頭肇禍",
+          "summary": "昨日傍晚，天水圍天河路對開路邊發泡膠箱及木板等雜物起火，有途人持滅火筒協助撲救，消防到場將火救熄，無人受傷。初步懷疑有人亂拋未熄煙頭燃着雜物。",
+          "sources": [
+            {
+              "name": "香港01",
+              "url": "https://www.hk01.com/%E7%AA%81%E7%99%BC/60414070/%E6%9C%89%E7%89%87-%E5%A4%A9%E6%B0%B4%E5%9C%8D%E5%A4%A9%E6%B2%B3%E8%B7%AF%E8%86%A0%E7%AE%B1%E6%9C%A8%E6%9D%BF%E8%B5%B7%E7%81%AB-%E9%80%94%E4%BA%BA%E6%8C%81%E6%BB%85%E7%81%AB%E7%AD%92%E6%92%B2%E7%95%91-%E7%96%91%E7%85%99%E9%A0%AD%E8%82%87%E7%A6%8D"
+            },
+            {
+              "name": "on.cc 東網",
+              "url": "https://hk.on.cc/hk/bkn/cnt/news/20261123/bkn-20261123173010284-1123_00822_001.html"
+            }
+          ],
+          "firstAppearedAt": "2026-11-23T17:30:00+08:00",
+          "publishedAt": "2026-11-23"
+        },
+        {
+          "id": "stroke-triage-expansion-kowloon-lantau-20261123",
+          "category": "救護",
+          "title": "「院前中風分流計劃」昨起擴展至九龍各區及大嶼山",
+          "summary": "消防處與醫管局合作嘅「院前中風分流計劃」由11月23日起由新界擴展至九龍各區及大嶼山。救護人員評估懷疑大血管閉塞中風患者後，會按所在地區直接送往指定醫院（瑪嘉烈、伊利沙伯或廣華醫院），縮短由送院到治療時間。",
+          "sources": [
+            {
+              "name": "政府新聞公報",
+              "url": "https://www.info.gov.hk/gia/general/202611/20/P2026112000494.htm"
+            },
+            {
+              "name": "香港電台",
+              "url": "https://news.rthk.hk/rthk/ch/component/k2/1878615-20261120.htm"
+            }
+          ],
+          "firstAppearedAt": "2026-11-20T16:29:00+08:00",
+          "publishedAt": "2026-11-23"
+        },
+        {
+          "id": "ce-wang-fuk-court-reform-progress-20261123",
+          "category": "政策相關",
+          "title": "特首聽取宏福苑大火系統性改革進度　《消防條例》修訂草案下月提交立法會",
+          "summary": "行政長官昨日聽取官員匯報宏福苑大火後系統性改革進度：保安局將於下月向立法會提交《消防條例》修訂草案進行首讀及二讀；發展局今日（24日）向立法會發展事務委員會匯報《建築物條例》修訂建議；督導委員會已落實29項獨立委員會建議；特首要求跨部門特遣隊嚴打圍標，並盡快成立樓宇維修支援及服務局。",
+          "sources": [
+            {
+              "name": "政府新聞公報",
+              "url": "https://www.info.gov.hk/gia/general/202611/23/P2026112300591.htm"
+            },
+            {
+              "name": "香港電台",
+              "url": "https://news.rthk.hk/rthk/ch/component/k2/1878973-20261123.htm"
+            }
+          ],
+          "firstAppearedAt": "2026-11-23T18:00:00+08:00",
+          "publishedAt": "2026-11-23"
+        },
+        {
+          "id": "hb-public-housing-building-control-unit-20261123",
+          "category": "政策相關",
+          "title": "房屋局「公營房屋樓宇管制組」成立　嚴格執行大維修消防安全預防措施",
+          "summary": "房屋局「公營房屋樓宇管制組」昨日成立，取代獨立審查組，規管房委會已出售／分拆出售屋邨及新建公營房屋工程。新制以屋苑大維修項目為基礎統籌監管，增設常規突擊巡查、加強監察註冊檢驗人員及承建商、建立跨部門協調及資訊互通機制，並嚴格執行屋宇署消防安全預防措施規定；已成立項目專隊協助五個正進行大維修嘅屋苑。",
+          "sources": [
+            {
+              "name": "政府新聞公報",
+              "url": "https://www.info.gov.hk/gia/general/202611/23/P2026112300614.htm"
+            },
+            {
+              "name": "香港電台",
+              "url": "https://news.rthk.hk/rthk/ch/component/k2/1878974-20261123.htm"
+            }
+          ],
+          "firstAppearedAt": "2026-11-23T18:10:00+08:00",
+          "publishedAt": "2026-11-23"
+        },
+        {
+          "id": "anti-bid-rigging-taskforce-97-arrests-20261123",
+          "category": "執法行動",
+          "title": "打擊樓宇維修圍標特遣隊第二輪行動拘97人　涉15屋苑工程逾1.3億元",
+          "summary": "保安局統籌、警方、廉署及競委會組成嘅聯合特遣隊於11月16至23日第二輪行動瓦解另一圍標集團，拘捕97人，涉全港15個屋苑或住宅大廈、工程合約總額逾1.3億元，並阻截兩份約760萬元維修合約。保安局提醒業主可於屋宇署網頁查核大廈是否獲發強制驗樓通知。",
+          "sources": [
+            {
+              "name": "政府新聞網",
+              "url": "https://www.news.gov.hk/chi/2026/11/20261123/20261123_180600_733.html"
+            },
+            {
+              "name": "香港電台",
+              "url": "https://news.rthk.hk/rthk/ch/component/k2/1878964-20261123.htm"
+            }
+          ],
+          "firstAppearedAt": "2026-11-23T18:06:00+08:00",
+          "publishedAt": "2026-11-23"
+        },
+        {
+          "id": "fsd-passing-out-parade-20261123",
+          "category": "其他",
+          "title": "消防處結業會操　144名學員將派駐消防局、救護站及通訊中心",
+          "summary": "行政會議非官守議員召集人葉劉淑儀昨日在消防及救護學院檢閱消防處結業會操，包括38名消防隊長、15名調派及通訊課消防隊目、46名消防員及45名救護員。她提及舊式樓宇消防隱患、極端天氣及大型基建救援等挑戰，並肯定消防處應用物聯網火警偵測、山火遙距空中偵測及AI影像分析等科技。",
+          "sources": [
+            {
+              "name": "政府新聞公報",
+              "url": "https://www.info.gov.hk/gia/general/202611/23/P2026112300261.htm"
+            }
+          ],
+          "firstAppearedAt": "2026-11-23T18:20:00+08:00",
+          "publishedAt": "2026-11-23"
+        }
+      ]
+    },
     {
       "briefingDate": "2026-11-23",
       "items": [
@@ -427,129 +554,6 @@
           ],
           "publishedAt": "2026-11-20",
           "firstAppearedAt": "2026-11-20T06:20:00+08:00"
-        }
-      ]
-    },
-    {
-      "briefingDate": "2026-11-19",
-      "items": [
-        {
-          "id": "north-point-electric-centre-fire-20261118",
-          "category": "火警",
-          "title": "北角電燈中心低壓設備異常起火　28歲港燈員工面及雙手燒傷清醒送院　約200人疏散",
-          "summary": "11月18日下午約5時，警方接報北角城市花園道電燈中心地下低壓設備出現異常並起火。消防到場將火救熄，約200人自行疏散。一名28歲港燈男職員當時到場取工具，面部及雙手燒傷，清醒送院。消防相信起因無可疑，懷疑低壓設備異常引致短路；港燈表示中心部分樓層供電受影響，客戶電力供應則維持正常，會進一步檢查相關設備。",
-          "sources": [
-            {
-              "name": "香港電台",
-              "url": "https://news.rthk.hk/rthk/ch/component/k2/1878344-20261118.htm"
-            },
-            {
-              "name": "無綫新聞",
-              "url": "https://news.tvb.com/tc/1207138-%E5%8C%97%E8%A7%92%E9%9B%BB%E7%87%88%E4%B8%AD%E5%BF%83%E6%9C%89%E8%AE%8A%E5%A3%93%E5%99%A8%E6%95%85%E9%9A%9C%E8%B5%B7%E7%81%AB%E4%B8%80%E5%90%8D%E6%B8%AF%E7%87%88%E5%93%A1%E5%B7%A5%E8%A2%AB%E7%87%92%E5%82%B7%E6%B8%85%E9%86%92%E9%80%81%E9%99%A2"
-            }
-          ],
-          "publishedAt": "2026-11-18",
-          "firstAppearedAt": "2026-11-18T17:00:00+08:00"
-        },
-        {
-          "id": "tai-po-chim-uk-village-fire-20261118",
-          "category": "火警",
-          "title": "大埔船灣詹屋村單位疑電器短路起火　女子吸濃煙清醒送院　約20人疏散",
-          "summary": "消防處於11月18日下午5時59分接報，大埔船灣詹屋村一個單位發生一級火警，4分鐘後到達，動用一條喉及一隊煙帽隊灌救，晚上6時18分大致救熄。一名女子吸入濃煙不適，經救護員初步治理後清醒送院；英文虎報指事主為23歲印尼籍家庭傭工。期間約20名居民自行疏散，消防員在單位救出兩隻狗及一隻貓，帶到安全地方。處方相信起因無可疑，起火位置為客廳，懷疑電器短路引致。",
-          "sources": [
-            {
-              "name": "香港電台",
-              "url": "https://news.rthk.hk/rthk/ch/component/k2/1878345-20261118.htm"
-            },
-            {
-              "name": "英文虎報",
-              "url": "https://www.thestandard.com.hk/news/article/348933/Fire-at-Tai-Po-village-house-helper-hospitalised"
-            }
-          ],
-          "publishedAt": "2026-11-18",
-          "firstAppearedAt": "2026-11-18T17:59:00+08:00"
-        },
-        {
-          "id": "fanling-wah-ming-estate-fu-ming-house-fire-20261118",
-          "category": "火警",
-          "title": "粉嶺華明邨富明樓廚房雜物起火　一家四口逃生　十多人疏散無人傷",
-          "summary": "警方於11月18日下午1時許接報，粉嶺華明邨富明樓一個單位廚房起火，湧出大量黑煙。消防到場灌救後將火救熄。現場消息指單位內有雜物起火，4名住戶安全逃生，期間10多名街坊自行疏散，暫時無人受傷，消防正調查起火原因。",
-          "sources": [
-            {
-              "name": "香港商報",
-              "url": "https://www.hkcd.com.hk/hkcdweb/content/2026/11/18/content_8786003.html"
-            }
-          ],
-          "publishedAt": "2026-11-18",
-          "firstAppearedAt": "2026-11-18T13:00:00+08:00"
-        },
-        {
-          "id": "sham-shui-po-fuk-wing-street-cat-rescue-20261118",
-          "category": "特別服務",
-          "title": "消防凌晨於深水埗福榮街大廈外牆簷篷架雲梯救出被困貓隻",
-          "summary": "11月18日凌晨約1時53分，消防接報深水埗福榮街37至39號一幢大廈外牆簷篷有貓隻被困。消防人員架起雲梯，報道指其後升至約7層高度，聯同愛護動物協會職員將貓隻救回安全地方，約15分鐘完成救援，經檢查後貓隻身體無大礙。消防提醒公眾如發現動物被困危險位置，切勿冒險營救，應聯絡消防處或相關部門求助。",
-          "sources": [
-            {
-              "name": "香港電台",
-              "url": "https://news.rthk.hk/rthk/ch/component/k2/1878253-20261118.htm"
-            },
-            {
-              "name": "星島日報",
-              "url": "https://www.stheadline.com/breaking-news/3638346/%E6%B7%B1%E6%B0%B4%E5%9F%97%E8%B2%93%E5%92%AA%E8%B5%B0%E5%87%BA%E7%B0%B7%E7%AF%B7-%E6%B6%88%E9%98%B2%E5%8D%87%E9%9B%B2%E6%A2%AF%E6%95%91%E5%9B%9E"
-            }
-          ],
-          "publishedAt": "2026-11-18",
-          "firstAppearedAt": "2026-11-18T01:53:00+08:00"
-        },
-        {
-          "id": "ipark1-legco-operation-delay-20261118",
-          "category": "政策相關",
-          "title": "立法會：I.PARK1火警後全面投入運作目標將順延　維修期未定　環保署再交代禁煙執法",
-          "summary": "環境及生態局局長謝展寰11月18日書面回覆立法會，指I.PARK1十月二十六日第三焚化模組火警後，承建商與註冊結構工程師仍在評估及制定復修方案，目前未能確定完成維修日期，原訂於2026年內全面投入運作的目標時間預計將順延；受影響範圍主要在第三模組樓頂及高層，結構暫無即時危險，廢物繼續改運新界西堆填區。消防處調查認為成因可能與燒焊或吸煙有關。環保署已責成承建商加強熱工序及地盤禁煙；今年一月至今已勒令9名在地盤吸煙的工人撤離，並處罰分判商59次、涉款約81萬元，違規個案已轉交勞工處跟進。",
-          "sources": [
-            {
-              "name": "政府新聞處",
-              "url": "https://www.info.gov.hk/gia/general/202611/18/P2026111800244.htm"
-            },
-            {
-              "name": "新城電台",
-              "url": "https://www.metroradio.com.hk/News/details.aspx?CategoryName=local&NewsId=20261118160648"
-            }
-          ],
-          "publishedAt": "2026-11-18",
-          "firstAppearedAt": "2026-11-18T13:10:00+08:00"
-        },
-        {
-          "id": "construction-fatal-accidents-legco-20261118",
-          "category": "政策相關",
-          "title": "立法會：過去八年建造業162宗致命工業意外　議員倡強制呈報吊棚工程",
-          "summary": "勞工及福利局局長孫玉菡11月18日在立法會表示，2018年至今年11月4日共有162宗建造業致命工業意外，其中43宗涉及工期少於六星期或僱用不多於10名工人的工程；2021年至今有53宗裝修及維修致命意外，約45%在意外前已呈報或為當局知悉，今年初佔比約六成。當局稱物管公司吊棚通報由2022年1,576宗增至今年首10個月19,876宗。有議員指機制難覆蓋三無大廈、工廈、村屋及唐樓，倡將吊棚等小型高風險工程納入強制呈報；孫玉菡表示會對未呈報的三無大廈小型工程加強突擊巡查執法。",
-          "sources": [
-            {
-              "name": "政府新聞處",
-              "url": "https://www.info.gov.hk/gia/general/202611/18/P2026111800285.htm"
-            },
-            {
-              "name": "香港電台",
-              "url": "https://news.rthk.hk/rthk/ch/component/k2/1878278-20261118.htm"
-            }
-          ],
-          "publishedAt": "2026-11-18",
-          "firstAppearedAt": "2026-11-18T12:59:00+08:00"
-        },
-        {
-          "id": "oxfam-trailwalker-traffic-arrangements-20261118",
-          "category": "其他",
-          "title": "「樂施毅行者2026」今起一連數日舉行　新界多路段實施特別交通安排",
-          "summary": "警方11月18日宣布，為配合11月19日至22日舉行的「樂施毅行者2026」，將於新界多處實施特別交通安排，指定時段封閉西貢萬宜路、大網仔路、沙田坳道、竹洋路、金山路、大帽山道及青盈路等路段，禁止所有車輛行駛（緊急車輛及獲運輸署許可者除外），並臨時停用大帽山及北潭涌等地停車位。警方會視乎交通及人流情況作適當安排，呼籲參加者及早規劃行程並盡量使用公共交通。",
-          "sources": [
-            {
-              "name": "政府新聞處",
-              "url": "https://www.info.gov.hk/gia/general/202611/18/P2026111800450.htm"
-            }
-          ],
-          "publishedAt": "2026-11-18",
-          "firstAppearedAt": "2026-11-18T15:01:00+08:00"
         }
       ]
     }
